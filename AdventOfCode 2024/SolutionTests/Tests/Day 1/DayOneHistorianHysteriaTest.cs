@@ -56,7 +56,7 @@ public class DayOneHistorianHysteriaTest
 
     private DayOneArgs GetArgs()
     {
-        var text = FileHelper.ReadFileAsString("input.txt");
+        var text = TestFileHelper.ReadFileAsString("input.txt");
 
         var firstList = new List<int>();
         var secondList = new List<int>();

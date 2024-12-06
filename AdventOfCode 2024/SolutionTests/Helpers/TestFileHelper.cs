@@ -2,7 +2,7 @@
 
 namespace SolutionTests.Helpers;
 
-public static class FileHelper
+public static class TestFileHelper
 {
     public static string ReadFileAsString(string file, [CallerFilePath]string filePath = "") {
         var directoryPath = Path.GetDirectoryName(filePath);
