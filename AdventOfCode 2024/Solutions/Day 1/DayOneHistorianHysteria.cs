@@ -2,7 +2,7 @@
 
 namespace Solutions.Day_1;
 
-public class DayOneHistorianHysteria
+public class DayOneHistorianHysteria : ISolution
 {
     private readonly int[] _listOne;
     private readonly int[] _listTwo;

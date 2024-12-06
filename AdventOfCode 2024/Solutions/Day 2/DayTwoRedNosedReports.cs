@@ -2,7 +2,7 @@
 
 namespace Solutions.Day_2;
 
-public class DayTwoRedNosedReports
+public class DayTwoRedNosedReports : ISolution
 {
     private readonly int[][] _reports;
     private readonly ITestOutputHelper _output;
