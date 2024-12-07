@@ -1,34 +1,20 @@
 ﻿using Solutions.Day_2;
 using SolutionTests.Helpers;
-using Xunit.Abstractions;
 
 namespace SolutionTests.Tests.Day_2;
 
-public class DayTwoRedNosedReportsActualTest(ITestOutputHelper output) : BaseTest(output), IActualTest
+public static class DayTwoCommon
 {
-    [Fact]
-    public void FirstPartTest()
-    {
-        var args = GetArgs();
-
-        var answer = new DayTwoRedNosedReports(args, Output).SolveFirstPart();
-        
-        Assert.Equal(598, answer);
-    }
+    public static DayTwoArgs ExampleInput = new([
+            [7, 6, 4, 2, 1],
+            [1, 2, 7, 8, 9],
+            [9, 7, 6, 2, 1],
+            [1, 3, 2, 4, 5],
+            [8, 6, 4, 4, 1],
+            [1, 3, 6, 7, 9]
+        ]);
     
-    [Fact]
-    public void SecondPartTest()
-    {
-        var args = GetArgs();
-
-        var answer = new DayTwoRedNosedReports(args, Output).SolveSecondPart();
-        
-        Assert.True(answer < 674);
-        Assert.True(answer > 626);
-        Assert.Equal(634, answer);
-    }
-
-    private DayTwoArgs GetArgs()
+    public static DayTwoArgs GetArgs()
     {
         var text = TestFileHelper.ReadFileAsString("input.txt");
 
@@ -52,5 +38,4 @@ public class DayTwoRedNosedReportsActualTest(ITestOutputHelper output) : BaseTes
 
         return new DayTwoArgs(allReports.ToArray());
     }
-
 }

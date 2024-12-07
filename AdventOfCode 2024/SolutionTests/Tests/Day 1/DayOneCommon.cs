@@ -1,32 +1,13 @@
 ﻿using Solutions.Day_1;
 using SolutionTests.Helpers;
-using Xunit.Abstractions;
 
 namespace SolutionTests.Tests.Day_1;
 
-public class DayOneHistorianHysteriaActualTest(ITestOutputHelper output) : BaseTest(output), IActualTest
+public static class DayOneCommon
 {
-    [Fact]
-    public void FirstPartTest()
-    {
-        var args = GetArgs();
-        
-        var answer = new DayOneHistorianHysteria(args, Output).SolveFirstPart();
-        
-        Assert.Equal(2196996, answer);
-    }
-
-    [Fact]
-    public void SecondPartTest()
-    {
-        var args = GetArgs();
-        
-        var answer = new DayOneHistorianHysteria(args, Output).SolveSecondPart();
-        
-        Assert.Equal(23655822, answer); 
-    }
+    public static DayOneArgs ExampleArgs => new([3, 4, 2, 1, 3, 3], [4, 3, 5, 3, 9, 3]);
     
-    private DayOneArgs GetArgs()
+    public static DayOneArgs GetArgs()
     {
         var text = TestFileHelper.ReadFileAsString("input.txt");
 

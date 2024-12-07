@@ -1,7 +1,7 @@
 ﻿namespace SolutionTests.Tests;
 
-public interface IActualTest
+public interface IFirstPart
 {
+    public void ExampleFirstPart();
     public void FirstPartTest();
-    public void SecondPartTest();
 }

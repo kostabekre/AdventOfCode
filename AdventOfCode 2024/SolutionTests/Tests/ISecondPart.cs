@@ -1,7 +1,7 @@
 ﻿namespace SolutionTests.Tests;
 
-public interface IExampleTest
+public interface ISecondPart
 {
-    public void ExampleFirstPart();
     public void ExampleSecondPart();
+    public void SecondPartTest();
 }
