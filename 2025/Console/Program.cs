@@ -1,9 +1,10 @@
 ﻿using System.Reflection;
 using solutions.Day2;
+using Solutions.Logging;
 
 var lines = GetInput(true);
 
-var answer = new Day2GiftShop().FindInvalidIds(lines);
+var answer = new Day2GiftShop(new ConsoleLogger()).FindInvalidIds(lines);
 
 Console.WriteLine(answer);
 

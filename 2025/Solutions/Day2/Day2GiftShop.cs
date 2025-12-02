@@ -1,10 +1,18 @@
 using System.Numerics;
 using Solutions.Common;
+using Solutions.Logging;
 
 namespace solutions.Day2;
 
 public class Day2GiftShop
 {
+    private readonly ILogger _logger;
+
+    public Day2GiftShop(ILogger logger)
+    {
+        _logger = logger;
+    }
+
     public BigInteger FindInvalidIds(IList<string> input)
     {
         var ranges = input.ConvertToRanges();
@@ -32,7 +40,7 @@ public class Day2GiftShop
     {
         var founded = new List<BigInteger>();
 
-        Console.WriteLine($"Parsing range {range}");
+        _logger.LogInfo($"Parsing range {range}");
 
         for (BigInteger i = range.Start; i <= range.End; i++)
         {
@@ -44,8 +52,8 @@ public class Day2GiftShop
             {
                 founded.Add(i);
 
-                Console.WriteLine($"Str is {str}, all are {firstElement}");
-                Console.WriteLine();
+                _logger.LogInfo($"Str is {str}, all are {firstElement}\n");
+
                 continue;
             }
 
@@ -63,7 +71,7 @@ public class Day2GiftShop
 
                 if (strSubRanges.All(x => x == subRange))
                 {
-                    Console.WriteLine($"Str is {str}, Subrange is {subRange}, all subranges are {string.Join(',', strSubRanges)}");
+                    _logger.LogInfo($"Str is {str}, Subrange is {subRange}, all subranges are {string.Join(',', strSubRanges)}\n");
 
                     foundedSubRange = true;
                     break;
@@ -73,7 +81,6 @@ public class Day2GiftShop
             if (foundedSubRange)
             {
                 founded.Add(i);
-                Console.WriteLine();
             }
         }
 
@@ -101,7 +108,7 @@ public class Day2GiftShop
                 continue;
             }
 
-            Console.WriteLine($"Str 1 - {subStrOne}, str 2 - {subStrTwo}");
+            _logger.LogInfo($"Str 1 - {subStrOne}, str 2 - {subStrTwo}");
 
             if (subStrOne == subStrTwo)
             {
